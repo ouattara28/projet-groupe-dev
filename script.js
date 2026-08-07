@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ================= SIDEBAR TOGGLE ================= */
     const sidebar = document.querySelector('.sidebar');
     const toggleButtons = document.querySelectorAll('.sidebar-toggle');
+    const logoPlaceholder = document.querySelector('.header-logo-placeholder');
 
     if (sidebar && toggleButtons.length > 0) {
         toggleButtons.forEach((button) => {
@@ -12,6 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleButtons.forEach((btn) => {
                     btn.setAttribute('aria-expanded', String(!isCollapsed));
                 });
+            });
+        });
+    }
+
+    /* Action de clic sur le logo pour déplier/replier la sidebar */
+    if (logoPlaceholder && sidebar) {
+        logoPlaceholder.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            const isCollapsed = sidebar.classList.contains('collapsed');
+            
+            toggleButtons.forEach((btn) => {
+                btn.setAttribute('aria-expanded', String(!isCollapsed));
             });
         });
     }
