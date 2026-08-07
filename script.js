@@ -1,42 +1,124 @@
-/*
-  citepay.js
-  Ce fichier contient le JavaScript extrait du HTML original.
-  Il gère la navigation entre les pages (onglets du bas) et
-  peut être étendu pour d'autres interactions (filtres, toggles, etc.).
-
-  Commentaires rapides :
-  - `navItems` : boutons de la navigation en bas
-  - `pages` : sections principales de l'UI identifiées par `id` (page-home, page-payments...)
-  - au clic sur un `nav-item` : on change la classe active, on masque les pages et on affiche la bonne page
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Sélection des éléments
-  const navItems = document.querySelectorAll('.nav-item');
-  const pages = document.querySelectorAll('.page');
-  const screen = document.querySelector('.screen');
+    /* ================= SIDEBAR TOGGLE ================= */
+    const sidebar = document.querySelector('.sidebar');
+    const toggleButtons = document.querySelectorAll('.sidebar-toggle');
 
-  // Ajoute le comportement de navigation pour chaque bouton
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      // Retire l'état actif de tous les boutons
-      navItems.forEach(n => n.classList.remove('active'));
-      // Marque le bouton cliqué comme actif
-      item.classList.add('active');
+    if (sidebar && toggleButtons.length > 0) {
+        toggleButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                const isCollapsed = sidebar.classList.contains('collapsed');
+                
+                toggleButtons.forEach((btn) => {
+                    btn.setAttribute('aria-expanded', String(!isCollapsed));
+                });
+            });
+        });
+    }
 
-      // Cache toutes les pages, puis affiche celle liée au bouton
-      pages.forEach(p => p.style.display = 'none');
-      const target = document.getElementById(item.dataset.page);
-      if (target) target.style.display = 'block';
-
-      // Remonte le scroll du conteneur vers le haut
-      if (screen) screen.scrollTop = 0;
+    /* ================= TOOLTIP DES LIENS ================= */
+    const menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach((link) => {
+        const label = link.querySelector('.menu-label');
+        const text = label ? label.textContent.trim() : link.textContent.trim();
+        if (text) {
+            link.setAttribute('title', text);
+            link.setAttribute('data-tooltip', text);
+        }
     });
-  });
-});
 
-/* Extensions possibles :
-   - gestion des `filter-chip` (ajouter / retirer la classe active)
-   - animations pour l'ouverture des overlays
-   - interactions des toggles et cartes de paiement
-*/
+    /* ================= MARQUER COMME LUE ================= */
+    const readButtons = document.querySelectorAll(".mark-read-btn");
+    readButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const card = e.target.closest(".notification-card");
+            if (card) {
+                card.classList.remove("unread");
+                card.setAttribute("data-status", "read");
+                btn.remove();
+            }
+        });
+    });
+
+    /* ================= SYSTÈME DE FILTRAGE UNIFIÉ ================= */
+    const filterChips = document.querySelectorAll('.filter-chip');
+
+    filterChips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+            filterChips.forEach((c) => c.classList.remove('active'));
+            chip.classList.add('active');
+
+            const filterValue = chip.getAttribute('data-filter');
+
+            // 1. Filtrage des cartes de notifications
+            const notifCards = document.querySelectorAll('.notification-card');
+            if (notifCards.length > 0) {
+                notifCards.forEach((card) => {
+                    const category = card.getAttribute('data-category');
+                    const status = card.getAttribute('data-status');
+
+                    if (filterValue === 'all') {
+                        card.style.display = '';
+                    } else if (filterValue === 'unread' && status === 'unread') {
+                        card.style.display = '';
+                    } else if (filterValue === category) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // 2. Filtrage des sections (Paiements / Documents)
+            const sections = document.querySelectorAll('.payment-section, .document-section');
+            if (sections.length > 0) {
+                sections.forEach((sec) => {
+                    const secType = sec.getAttribute('data-section-type');
+                    if (filterValue === 'all' || secType === filterValue) {
+                        sec.style.display = '';
+                    } else {
+                        sec.style.display = 'none';
+                    }
+                });
+            }
+
+            // 3. Filtrage des cartes de réglages (Page Paramètres)
+            const settingsCards = document.querySelectorAll('.settings-card');
+            if (settingsCards.length > 0) {
+                settingsCards.forEach((card) => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // 4. Filtrage des lignes de tableaux
+            const tableRows = document.querySelectorAll('.data-table tbody tr');
+            if (tableRows.length > 0) {
+                tableRows.forEach((row) => {
+                    const statusBadge = row.querySelector('.status-badge');
+                    const category = row.getAttribute('data-category') || row.getAttribute('data-status');
+
+                    if (filterValue === 'all') {
+                        row.style.display = '';
+                    } else if (statusBadge) {
+                        if (filterValue === 'pending' && statusBadge.classList.contains('pending')) {
+                            row.style.display = '';
+                        } else if (filterValue === 'paid' && statusBadge.classList.contains('paid')) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    } else if (category && category === filterValue) {
+                        row.style.display = '';
+                    } else if (category) {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+});

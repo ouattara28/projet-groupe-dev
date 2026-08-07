@@ -1,55 +1,264 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>CitéPay — Accueil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitéPay — Dashboard Locataire</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Bienvenue sur CitéPay</h1>
-<div class="app">
+    <nav class="site-nav">
+        <button class="sidebar-toggle" aria-expanded="true">
+            <span class="material-symbols-rounded">menu</span>
+        </button>
+        <span class="site-nav-title">CitéPay</span>
+    </nav>
 
-  <div class="header">
-    <div>
-    
-      <div class="greet-name">—</div>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="header-logo-placeholder">
+                    <span class="material-symbols-rounded">apartment</span>
+                </div>
+                
+                <div class="text header-text">
+                    <span class="name">CitéPay</span>
+                    <span class="profession">Espace Locataire</span>
+                </div>
+                <button class="sidebar-toggle" aria-expanded="true">
+                    <span class="material-symbols-rounded">chevron_left</span>
+                </button>
+            </header>
+
+            <div class="sidebar-content">
+                <form action="#" class="search-form" onsubmit="event.preventDefault();">
+                    <span class="material-symbols-rounded">search</span>
+                    <input type="search" placeholder="Rechercher..." required>
+                </form>
+
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link active">
+                            <span class="material-symbols-rounded">home</span>
+                            <span class="menu-label">Accueil</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="paiements.html" class="menu-link">
+                            <span class="material-symbols-rounded">payments</span>
+                            <span class="menu-label">Paiements</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="documents.html" class="menu-link">
+                            <span class="material-symbols-rounded">description</span>
+                            <span class="menu-label">Documents</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="notifications.html" class="menu-link">
+                            <span class="material-symbols-rounded">notifications</span>
+                            <span class="menu-label">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="parametres.html" class="menu-link">
+                            <span class="material-symbols-rounded">settings</span>
+                            <span class="menu-label">Paramètres</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="menu-item">
+                    <a href="deconnexion.html" class="menu-link">
+                        <span class="material-symbols-rounded">logout</span>
+                        <span class="menu-label">Déconnexion</span>
+                    </a>
+                </li>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <header class="dashboard-header">
+                <div>
+                    <h1 class="page-title">Bonjour 👋, Ismaël</h1>
+                    <p class="subtitle">Résidence Les Palmiers · Apt. B14</p>
+                </div>
+                <div class="user-profile-badge">
+                    <div class="user-avatar">IO</div>
+                </div>
+            </header>
+
+            <!-- Cards Stats Grid -->
+            <section class="stats-grid">
+                <div class="card stat-card">
+                    <div class="stat-icon bg-warning">
+                        <span class="material-symbols-rounded">schedule</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">Prochaine Échéance</span>
+                        <span class="stat-value">10 août 2026</span>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon bg-accent">
+                        <span class="material-symbols-rounded">account_balance_wallet</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">Montant du Loyer</span>
+                        <span class="stat-value">295 000 FCFA</span>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon bg-success">
+                        <span class="material-symbols-rounded">check_circle</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">Statut du Compte</span>
+                        <span class="stat-value text-success">À jour (Juillet)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Interactive Section -->
+            <section class="dashboard-grid">
+                <!-- Payment Banner -->
+                <div class="card payment-hero-card">
+                    <div class="hero-content">
+                        <span class="badge-due">Loyer en attente</span>
+                        <h2>Montant dû : 295 000 FCFA</h2>
+                        <p>Échéance le 10 août 2026</p>
+                        <button class="btn-primary">
+                            <span class="material-symbols-rounded">credit_card</span>
+                            Payer maintenant
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Grid -->
+                <div class="card quick-actions-card">
+                    <h3>Accès rapides</h3>
+                    <div class="quick-grid">
+                        <a href="paiements.html" class="quick-item">
+                            <div class="quick-icon"><span class="material-symbols-rounded">history</span></div>
+                            <span>Paiements</span>
+                        </a>
+                        <a href="documents.html" class="quick-item">
+                            <div class="quick-icon"><span class="material-symbols-rounded">description</span></div>
+                            <span>Documents & Bail</span>
+                        </a>
+                        <a href="notifications.html" class="quick-item">
+                            <div class="quick-icon"><span class="material-symbols-rounded">notifications</span></div>
+                            <span>Alertes</span>
+                        </a>
+                        <a href="parametres.html" class="quick-item">
+                            <div class="quick-icon"><span class="material-symbols-rounded">settings</span></div>
+                            <span>Mon Profil</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transactions and Documents Grid -->
+            <section class="content-grid">
+                <!-- Recent Transactions Table -->
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h3>Activité récente</h3>
+                        <a href="paiements.html" class="link-more">Voir tout</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Loyer — Juillet 2026</td>
+                                    <td>02 juil. 2026</td>
+                                    <td><strong>295 000 FCFA</strong></td>
+                                    <td><span class="status-badge paid">Payé</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Loyer — Juin 2026</td>
+                                    <td>03 juin 2026</td>
+                                    <td><strong>295 000 FCFA</strong></td>
+                                    <td><span class="status-badge paid">Payé</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Réparation robinet</td>
+                                    <td>28 mai 2026</td>
+                                    <td><strong>-</strong></td>
+                                    <td><span class="status-badge pending">En cours</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Documents Section -->
+                <div class="card docs-card">
+                    <div class="card-header">
+                        <h3>Mes Documents</h3>
+                        <a href="documents.html" class="link-more">Tous</a>
+                    </div>
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">description</span>
+                                <div>
+                                    <span class="doc-title">Bail de résidence 2026</span>
+                                    <span class="doc-sub">Signé · PDF (1.2 Mo)</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Juillet 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · PDF</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">verified</span>
+                                <div>
+                                    <span class="doc-title">Attestation de résidence</span>
+                                    <span class="doc-sub">Valide jusqu'au 30/06/2027</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
     </div>
-    <div class="avatar">—</div>
-  </div>
 
-<!-- la barre avec la somme sur la page d'accueil -->
-
-  <div class="balance-card">
-    <div class="bc-top"><span>—</span><span>—</span></div>
-    <div class="bc-amount-label">Montant à régler</div>
-    <div class="bc-amount">—<span>FCFA</span></div>
-    <button class="bc-cta">Payer maintenant</button>
-  </div>
-
-<!-- les boutons d'actions de la pagtge d'accueil on apuie mais il ya rien dedans -->
-
-  <div class="section-title">Accès rapide</div>
-  <div class="grid">
-    <button>Historique</button>
-    <button>Bail</button>
-    <button>Maintenance</button>
-    <button>Auto-Pay</button>
-  </div>
-
-  <div class="section-title">Activité récente</div>
-
-  <div class="empty-state">Aucune activité pour le moment</div>
-
-</div>
-
-
-<!-- le lien entr chaque page -->
-
-<div class="nav">
-  <a href="index.html" class="active">Accueil</a>
-  <a href="paiement.html">Paiements</a>
-  <a href="document.html">Documents</a>
-  <a href="profil.html">Profil</a>
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
