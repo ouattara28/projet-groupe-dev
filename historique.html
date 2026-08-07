@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Historique de paiement</title>
+</head>
+<body>
+
+<h1>Historique de paiement</h1>
+
+<table id="payment-table" border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Montant</th>
+      <th>Méthode</th>
+      <th>Statut</th>
+    </tr>
+  </thead>
+  <tbody id="payment-history">
+    <!-- Les lignes sont ajoutées ici dynamiquement -->
+  </tbody>
+</table>
+
+<p id="empty-message">Aucun paiement enregistré pour le moment.</p>
+
+<script>
+// ça affiche les payement recent et les detail de cést payement fait en javascript sorry claude má aider pour le coup
+
+  function addPayment(date, description, montant, methode, statut) {
+    const tbody = document.getElementById('payment-history');
+    const row = document.createElement('tr');
+
+    [date, description, montant, methode, statut].forEach(function (value) {
+      const cell = document.createElement('td');
+      cell.textContent = value || '';
+      row.appendChild(cell);
+    });
+
+    tbody.appendChild(row);
+    updateEmptyMessage();
+  }
+
+  // ça reinitialise l'historique pour en mettre d'autre
+
+  function clearPayments() {
+    document.getElementById('payment-history').innerHTML = '';
+    updateEmptyMessage();
+  }
+
+  function updateEmptyMessage() {
+    const tbody = document.getElementById('payment-history');
+    const message = document.getElementById('empty-message');
+    message.style.display = tbody.children.length === 0 ? '' : 'none';
+  }
+
+// lordre et des detail de payement en fonction du moyen de payement
+
+  updateEmptyMessage();
+</script>
+
+</body>
+</html>

@@ -2,301 +2,54 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>CitéPay — UI Mockup</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<!-- Styles moved to style.css - contains variables, layout and component styles -->
-<link rel="stylesheet" href="style.css">
+<title>CitéPay — Accueil</title>
 </head>
 <body>
+<h1>Bienvenue sur CitéPay</h1>
+<div class="app">
 
-<div class="phone">
-  <div class="notch"></div>
-  <div class="status">
-    <span>9:41</span>
-    <span>●●● 5G 🔋</span>
+  <div class="header">
+    <div>
+    
+      <div class="greet-name">—</div>
+    </div>
+    <div class="avatar">—</div>
   </div>
 
-  <div class="screen">
+<!-- la barre avec la somme sur la page d'accueil -->
 
-  <div class="page" id="page-home">
-    <div class="header">
-      <div>
-        <div class="greet-label">Bonjour 👋</div>
-        <div class="greet-name">Ismaël O.</div>
-      </div>
-      <div class="header-icons">
-        <div class="bell">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#12211B" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        </div>
-        <div class="avatar">IO</div>
-      </div>
-    </div>
-
-    <div class="balance-wrap">
-      <div class="balance-card">
-        <div class="bc-top">
-          <div class="bc-status"><span class="dot"></span>Loyer dû</div>
-          <div class="bc-due-date">Échéance : 10 août</div>
-        </div>
-        <div class="bc-amount-label">Montant à régler</div>
-        <div class="bc-amount">295 000<span>FCFA</span></div>
-        <button class="bc-cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#221008" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          Payer maintenant
-        </button>
-      </div>
-    </div>
-
-    <div class="section-title">Accès rapide</div>
-    <div class="quick-grid">
-      <div class="quick-item">
-        <div class="quick-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-        <div class="quick-label">Historique</div>
-      </div>
-      <div class="quick-item">
-        <div class="quick-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
-        <div class="quick-label">Bail</div>
-      </div>
-      <div class="quick-item">
-        <div class="quick-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.1 5.1l-6.9 6.9a2 2 0 0 1-2.8-2.8l6.9-6.9a4 4 0 0 1 5.1-5.1l-3.1 3.1z"/></svg></div>
-        <div class="quick-label">Maintenance</div>
-      </div>
-      <div class="quick-item">
-        <div class="quick-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <div class="quick-label">Auto-Pay</div>
-      </div>
-    </div>
-
-    <div class="section-title">Activité récente</div>
-
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div>
-          <div class="act-title">Loyer — Juillet</div>
-          <div class="act-date">02 juil. 2026</div>
-        </div>
-      </div>
-      <div class="act-right">
-        <div class="act-amount">295 000 F</div>
-        <span class="badge paid">Payé</span>
-      </div>
-    </div>
-
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div>
-          <div class="act-title">Loyer — Juin</div>
-          <div class="act-date">03 juin 2026</div>
-        </div>
-      </div>
-      <div class="act-right">
-        <div class="act-amount">295 000 F</div>
-        <span class="badge paid">Payé</span>
-      </div>
-    </div>
-
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a4 4 0 0 1-5.1 5.1l-6.9 6.9a2 2 0 0 1-2.8-2.8l6.9-6.9a4 4 0 0 1 5.1-5.1l-3.1 3.1z"/></svg></div>
-        <div>
-          <div class="act-title">Réparation robinet</div>
-          <div class="act-date">28 mai 2026</div>
-        </div>
-      </div>
-      <div class="act-right">
-        <span class="badge pending">En cours</span>
-      </div>
-    </div>
+  <div class="balance-card">
+    <div class="bc-top"><span>—</span><span>—</span></div>
+    <div class="bc-amount-label">Montant à régler</div>
+    <div class="bc-amount">—<span>FCFA</span></div>
+    <button class="bc-cta">Payer maintenant</button>
   </div>
-  </div><!-- /page-home -->
 
-  <!-- ===================== PAIEMENTS ===================== -->
-  <div class="page" id="page-payments" style="display:none;">
-    <div class="header">
-      <div>
-        <div class="greet-label">Paiements</div>
-        <div class="greet-name">Vue d'ensemble</div>
-      </div>
-      <div class="header-icons">
-        <div class="bell"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#12211B" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-      </div>
-    </div>
+<!-- les boutons d'actions de la pagtge d'accueil on apuie mais il ya rien dedans -->
 
-    <div class="balance-wrap">
-      <div class="balance-card" style="padding:22px 22px 20px;">
-        <div class="bc-top">
-          <div class="bc-status"><span class="dot" style="background:#8FD9AE;box-shadow:none;"></span>Prochain prélèvement</div>
-        </div>
-        <div class="bc-amount-label">Auto-Pay actif — 10 sept.</div>
-        <div class="bc-amount" style="font-size:30px;">295 000<span>FCFA</span></div>
-      </div>
-    </div>
-
-    <div class="filter-row">
-      <button class="filter-chip active">Tous</button>
-      <button class="filter-chip">Payés</button>
-      <button class="filter-chip">En attente</button>
-    </div>
-
-    <div class="section-title" style="padding-top:16px;">Août 2026</div>
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="act-title">Loyer — Août</div><div class="act-date">Échéance 10 août</div></div>
-      </div>
-      <div class="act-right"><span class="badge pending">À payer</span></div>
-    </div>
-
-    <div class="section-title">Historique</div>
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="act-title">Loyer — Juillet</div><div class="act-date">02 juil. 2026 · Wave</div></div>
-      </div>
-      <div class="act-right"><div class="act-amount">295 000 F</div><span class="badge paid">Payé</span></div>
-    </div>
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="act-title">Loyer — Juin</div><div class="act-date">03 juin 2026 · Orange Money</div></div>
-      </div>
-      <div class="act-right"><div class="act-amount">295 000 F</div><span class="badge paid">Payé</span></div>
-    </div>
-    <div class="activity-row">
-      <div class="act-left">
-        <div class="act-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <div><div class="act-title">Loyer — Mai</div><div class="act-date">01 mai 2026 · Wave</div></div>
-      </div>
-      <div class="act-right"><div class="act-amount">295 000 F</div><span class="badge paid">Payé</span></div>
-    </div>
-  </div><!-- /page-payments -->
-
-  <!-- ===================== DOCUMENTS ===================== -->
-  <div class="page" id="page-documents" style="display:none;">
-    <div class="header">
-      <div>
-        <div class="greet-label">Documents</div>
-        <div class="greet-name">Mes fichiers</div>
-      </div>
-      <div class="header-icons">
-        <div class="bell"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#12211B" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-      </div>
-    </div>
-
-    <div class="section-title" style="padding-top:16px;">Contrat</div>
-    <div class="doc-row">
-      <div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
-      <div style="flex:1;">
-        <div class="act-title">Bail de résidence 2026–2027</div>
-        <div class="act-date">Signé le 02 sept. 2025 · PDF · 1.2 Mo</div>
-      </div>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
-    </div>
-
-    <div class="section-title">Reçus de paiement</div>
-    <div class="doc-row">
-      <div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
-      <div style="flex:1;">
-        <div class="act-title">Reçu — Juillet 2026</div>
-        <div class="act-date">295 000 FCFA · PDF</div>
-      </div>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
-    </div>
-    <div class="doc-row">
-      <div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
-      <div style="flex:1;">
-        <div class="act-title">Reçu — Juin 2026</div>
-        <div class="act-date">295 000 FCFA · PDF</div>
-      </div>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
-    </div>
-
-    <div class="section-title">Attestations</div>
-    <div class="doc-row">
-      <div class="doc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
-      <div style="flex:1;">
-        <div class="act-title">Attestation de résidence</div>
-        <div class="act-date">Valide jusqu'au 30 juin 2027</div>
-      </div>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
-    </div>
-  </div><!-- /page-documents -->
-
-  <!-- ===================== PROFIL ===================== -->
-  <div class="page" id="page-profile" style="display:none;">
-    <div class="header">
-      <div>
-        <div class="greet-label">Profil</div>
-        <div class="greet-name">Mon compte</div>
-      </div>
-    </div>
-
-    <div style="display:flex;flex-direction:column;align-items:center;padding:14px 22px 6px;">
-      <div style="width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,var(--emerald-mid),var(--emerald-deep));display:flex;align-items:center;justify-content:center;color:white;font-family:'Space Grotesk';font-weight:600;font-size:26px;box-shadow:0 10px 24px -8px rgba(15,61,46,0.5);">IO</div>
-      <div style="font-family:'Space Grotesk';font-weight:600;font-size:17px;margin-top:12px;color:var(--ink);">Ouattara Ismaël Ali</div>
-      <div style="font-size:12.5px;color:var(--ink-soft);margin-top:2px;">Résidence Les Palmiers · Ch. B14</div>
-    </div>
-
-    <div class="section-title">Compte</div>
-    <div class="settings-row">
-      <div class="settings-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div style="flex:1;" class="act-title">Informations personnelles</div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
-    <div class="settings-row">
-      <div class="settings-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-      <div style="flex:1;" class="act-title">Méthodes de paiement</div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
-    <div class="settings-row">
-      <div class="settings-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-      <div style="flex:1;" class="act-title">Notifications</div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
-
-    <div class="section-title">Sécurité</div>
-    <div class="settings-row">
-      <div class="settings-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-      <div style="flex:1;" class="act-title">Mot de passe & Face ID</div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
-    <div class="settings-row">
-      <div class="settings-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
-      <div style="flex:1;" class="act-title">Aide & support</div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5C6D65" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </div>
-
-    <div class="settings-row" style="margin-top:6px;">
-      <div class="settings-icon" style="background:#FDEAE5;color:#D2492E;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg></div>
-      <div style="flex:1;color:#D2492E;font-size:13.5px;font-weight:600;">Déconnexion</div>
-    </div>
-  </div><!-- /page-profile -->
-
-  <div class="bottom-nav">
-    <button class="nav-item active" data-page="page-home">
-      <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-      <div class="nav-label">Accueil</div>
-    </button>
-    <button class="nav-item" data-page="page-payments">
-      <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-      <div class="nav-label">Paiements</div>
-    </button>
-    <button class="nav-item" data-page="page-documents">
-      <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div>
-      <div class="nav-label">Documents</div>
-    </button>
-    <button class="nav-item" data-page="page-profile">
-      <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="nav-label">Profil</div>
-    </button>
+  <div class="section-title">Accès rapide</div>
+  <div class="grid">
+    <button>Historique</button>
+    <button>Bail</button>
+    <button>Maintenance</button>
+    <button>Auto-Pay</button>
   </div>
+
+  <div class="section-title">Activité récente</div>
+
+  <div class="empty-state">Aucune activité pour le moment</div>
+
 </div>
 
-<!-- JavaScript moved to citepay.js - handles navigation and interactivity -->
-<script src="citepay.js"></script>
+
+<!-- le lien entr chaque page -->
+
+<div class="nav">
+  <a href="index.html" class="active">Accueil</a>
+  <a href="paiement.html">Paiements</a>
+  <a href="document.html">Documents</a>
+  <a href="profil.html">Profil</a>
+</div>
 
 </body>
 </html>
