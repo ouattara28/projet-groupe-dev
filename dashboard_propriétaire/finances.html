@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitéPay — Finances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <button class="sidebar-toggle" aria-expanded="true">
+            <span class="material-symbols-rounded">menu</span>
+        </button>
+        <span class="site-nav-title">CitéPay</span>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="header-logo-placeholder">
+                    <span class="material-symbols-rounded">apartment</span>
+                </div>
+                <div class="text header-text">
+                    <span class="name">CitéPay</span>
+                    <span class="profession">Espace Propriétaire</span>
+                </div>
+                <button class="sidebar-toggle" aria-expanded="true">
+                    <span class="material-symbols-rounded">chevron_left</span>
+                </button>
+            </header>
+
+            <div class="sidebar-content">
+                <form action="#" class="search-form" onsubmit="event.preventDefault();">
+                    <span class="material-symbols-rounded">search</span>
+                    <input type="search" placeholder="Rechercher..." required>
+                </form>
+
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">
+                            <span class="material-symbols-rounded">home</span>
+                            <span class="menu-label">Accueil</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="biens.html" class="menu-link">
+                            <span class="material-symbols-rounded">apartment</span>
+                            <span class="menu-label">Biens</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="locataires.html" class="menu-link">
+                            <span class="material-symbols-rounded">group</span>
+                            <span class="menu-label">Locataires</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="finances.html" class="menu-link active">
+                            <span class="material-symbols-rounded">account_balance</span>
+                            <span class="menu-label">Finances</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="notifications.html" class="menu-link">
+                            <span class="material-symbols-rounded">notifications</span>
+                            <span class="menu-label">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="parametres.html" class="menu-link">
+                            <span class="material-symbols-rounded">settings</span>
+                            <span class="menu-label">Paramètres</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="menu-item">
+                    <a href="deconnexion.html" class="menu-link">
+                        <span class="material-symbols-rounded">logout</span>
+                        <span class="menu-label">Déconnexion</span>
+                    </a>
+                </li>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h1 class="page-title">Finances</h1>
+                    <p class="subtitle">Vue d'ensemble et transactions</p>
+                </div>
+                <div class="user-profile-badge">
+                    <div class="user-avatar">IO</div>
+                </div>
+            </header>
+
+            <!-- Stats Financières -->
+            <div class="stats-grid">
+                <div class="card stat-card">
+                    <div class="stat-icon bg-success">
+                        <span class="material-symbols-rounded">check_circle</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">Payé</span>
+                        <span class="stat-value">1,8M <small>FCFA</small></span>
+                    </div>
+                </div>
+                <div class="card stat-card">
+                    <div class="stat-icon bg-warning">
+                        <span class="material-symbols-rounded">schedule</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">En attente</span>
+                        <span class="stat-value">340K <small>FCFA</small></span>
+                    </div>
+                </div>
+                <div class="card stat-card">
+                    <div class="stat-icon stat-icon-danger">
+                        <span class="material-symbols-rounded">error</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">En retard</span>
+                        <span class="stat-value">150K <small>FCFA</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prochain versement info -->
+            <div class="card next-payment-card">
+                <div class="next-payment-info">
+                    <div class="next-payment-icon">
+                        <span class="material-symbols-rounded">event</span>
+                    </div>
+                    <div>
+                        <strong class="next-payment-title">Prochain versement</strong>
+                        <span class="subtitle">15 août · Mobile Money</span>
+                    </div>
+                </div>
+                <button class="btn-secondary btn-sm">
+                    <span class="material-symbols-rounded">download</span>
+                    Exporter
+                </button>
+            </div>
+
+            <!-- Graphique d'évolution des encaissements -->
+            <div class="card chart-card">
+                <div class="card-header chart-card-header">
+                    <h3>Évolution des encaissements</h3>
+                    <span class="subtitle">Derniers mois (en FCFA)</span>
+                </div>
+                <div class="chart-container">
+                    <!-- Mois 1 : Juin -->
+                    <div class="chart-row">
+                        <div class="chart-info">
+                            <span class="chart-month">Juin</span>
+                            <span class="chart-amount">1,5M FCFA</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-june"></div>
+                        </div>
+                    </div>
+                    <!-- Mois 2 : Juillet -->
+                    <div class="chart-row">
+                        <div class="chart-info">
+                            <span class="chart-month">Juillet</span>
+                            <span class="chart-amount">1,65M FCFA</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-july"></div>
+                        </div>
+                    </div>
+                    <!-- Mois 3 : Août (En cours) -->
+                    <div class="chart-row">
+                        <div class="chart-info">
+                            <span class="chart-month">Août (En cours)</span>
+                            <span class="chart-amount text-success-bold">1,8M FCFA</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-august"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtres unifiés compatibles avec script.js -->
+            <div class="filter-row">
+                <button class="filter-chip active" data-filter="all">Toutes</button>
+                <button class="filter-chip" data-filter="paid">Payées</button>
+                <button class="filter-chip" data-filter="pending">En attente</button>
+                <button class="filter-chip" data-filter="delay">En retard</button>
+            </div>
+
+            <!-- Transactions récentes -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Transactions récentes</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Locataire</th>
+                                <th>Bien / Résidence</th>
+                                <th>Montant</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-status="paid">
+                                <td>
+                                    <div class="table-user-cell">
+                                        <div class="table-avatar">AK</div>
+                                        <strong>Aicha Koné</strong>
+                                    </div>
+                                </td>
+                                <td>Résidence Koumassi · Apt 4B</td>
+                                <td>150 000 FCFA</td>
+                                <td><span class="status-badge paid">Payé</span></td>
+                            </tr>
+                            <tr data-status="pending">
+                                <td>
+                                    <div class="table-user-cell">
+                                        <div class="table-avatar">YB</div>
+                                        <strong>Yao Brou</strong>
+                                    </div>
+                                </td>
+                                <td>Résidence Cocody · Studio 2</td>
+                                <td>95 000 FCFA</td>
+                                <td><span class="status-badge pending">En attente</span></td>
+                            </tr>
+                            <tr data-status="delay">
+                                <td>
+                                    <div class="table-user-cell">
+                                        <div class="table-avatar">FD</div>
+                                        <strong>Fatou Diabaté</strong>
+                                    </div>
+                                </td>
+                                <td>Résidence Koumassi · Apt 1A</td>
+                                <td>150 000 FCFA</td>
+                                <td><span class="status-badge status-badge-danger">En retard</span></td>
+                            </tr>
+                            <tr data-status="paid">
+                                <td>
+                                    <div class="table-user-cell">
+                                        <div class="table-avatar">IT</div>
+                                        <strong>Ibrahim Traoré</strong>
+                                    </div>
+                                </td>
+                                <td>Résidence Marcory · Apt 3C</td>
+                                <td>180 000 FCFA</td>
+                                <td><span class="status-badge paid">Payé</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
