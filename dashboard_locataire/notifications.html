@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
@@ -37,6 +36,11 @@
             </header>
 
             <div class="sidebar-content">
+                <button class="theme-toggle theme-toggle-row" type="button">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                    <span class="menu-label">Mode sombre</span>
+                </button>
+
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -99,7 +103,7 @@
                     <p class="subtitle">Centre de rappels, alertes et messages importants</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">IO</div>
+                    <div class="user-avatar">--</div>
                 </div>
             </header>
 
@@ -182,6 +186,15 @@
         </main>
     </div>
 
+    <script src="mock-api.js"></script>
+    <script src="auth.js"></script>
+    <script src="page-protegee.js"></script>
+    <script src="modal.js"></script>
+    <script src="validation-formulaire.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="recherche-globale.js"></script>
+    <script src="interactions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

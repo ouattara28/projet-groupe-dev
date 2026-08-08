@@ -9,9 +9,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour la sélection des moyens de paiement */
+        .payment-methods-card {
+            margin-bottom: 24px;
+        }
+
+        .payment-providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .provider-card {
+            border: 2px solid var(--color-border-hr, #e2e8f0);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.2s ease-in-out;
+            background: var(--color-bg-card, #ffffff);
+            position: relative;
+        }
+
+        .provider-card:hover {
+            border-color: var(--color-primary, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .provider-card.active {
+            border-color: var(--color-primary, #2563eb);
+            background: rgba(37, 99, 235, 0.04);
+        }
+
+        .provider-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .provider-icon.wave {
+            background-color: #1dc3f7;
+        }
+
+        .provider-icon.mtn {
+            background-color: #ffcc00;
+            color: #000000;
+        }
+
+        .provider-icon.orange {
+            background-color: #ff6600;
+        }
+
+        .provider-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .provider-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
+        }
+
+        .provider-sub {
+            font-size: 0.8rem;
+            color: var(--color-text-placeholder, #64748b);
+        }
+
+        .provider-radio {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            accent-color: var(--color-primary, #2563eb);
+        }
+    </style>
 </head>
 <body>
-    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
@@ -37,6 +122,11 @@
             </header>
 
             <div class="sidebar-content">
+                <button class="theme-toggle theme-toggle-row" type="button">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                    <span class="menu-label">Mode sombre</span>
+                </button>
+
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -99,12 +189,12 @@
                     <p class="subtitle">Vue d'ensemble et historique de vos règlements</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">IO</div>
+                    <div class="user-avatar">--</div>
                 </div>
             </header>
 
             <!-- Banner Auto-Pay -->
-            <section class="dashboard-grid grid-single">
+            <section class="dashboard-grid grid-single mb-large">
                 <div class="card payment-hero-card">
                     <div class="hero-content">
                         <span class="badge-due badge-success-soft">Auto-Pay Actif</span>
@@ -115,6 +205,42 @@
                             Gérer le prélèvement
                         </button>
                     </div>
+                </div>
+            </section>
+
+            <!-- Sélection du Moyen de Paiement Mobile Money -->
+            <section class="card payment-methods-card">
+                <div class="card-header">
+                    <h3>Moyen de paiement par défaut</h3>
+                    <span class="subtitle">Sélectionnez le mode de règlement utilisé pour vos transactions</span>
+                </div>
+                <div class="payment-providers-grid">
+                    <label class="provider-card active" for="method-wave">
+                        <input type="radio" name="payment_method" id="method-wave" value="Wave" class="provider-radio" checked>
+                        <div class="provider-icon wave">🌊</div>
+                        <div class="provider-info">
+                            <span class="provider-name">Wave</span>
+                            <span class="provider-sub">Paiement QR / Direct</span>
+                        </div>
+                    </label>
+
+                    <label class="provider-card" for="method-mtn">
+                        <input type="radio" name="payment_method" id="method-mtn" value="MTN Mobile Money" class="provider-radio">
+                        <div class="provider-icon mtn">MoMo</div>
+                        <div class="provider-info">
+                            <span class="provider-name">MTN MoMo</span>
+                            <span class="provider-sub">Mobile Money</span>
+                        </div>
+                    </label>
+
+                    <label class="provider-card" for="method-orange">
+                        <input type="radio" name="payment_method" id="method-orange" value="Orange Money" class="provider-radio">
+                        <div class="provider-icon orange">OM</div>
+                        <div class="provider-info">
+                            <span class="provider-name">Orange Money</span>
+                            <span class="provider-sub">Code USSD / App</span>
+                        </div>
+                    </label>
                 </div>
             </section>
 
@@ -141,13 +267,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-status="pending">
+                                <tr data-status="pending" data-amount="295 000 FCFA">
                                     <td>Loyer — Août 2026</td>
                                     <td>10 août 2026</td>
                                     <td><strong>295 000 FCFA</strong></td>
                                     <td><span class="status-badge pending">À payer</span></td>
                                     <td>
-                                        <button class="btn-primary btn-sm">
+                                        <button class="btn-primary btn-sm" data-action="pay" data-amount="295 000 FCFA" data-provider="Wave" data-description="Loyer — Août 2026">
                                             Payer
                                         </button>
                                     </td>
@@ -167,7 +293,7 @@
                             <thead>
                                 <tr>
                                     <th>Description</th>
-                                    <th>Date & Moyen</th>
+                                    <th>Date &amp; Moyen</th>
                                     <th>Montant</th>
                                     <th>Statut</th>
                                     <th>Reçu</th>
@@ -180,7 +306,7 @@
                                     <td><strong>295 000 FCFA</strong></td>
                                     <td><span class="status-badge paid">Payé</span></td>
                                     <td>
-                                        <button class="btn-icon">
+                                        <button class="btn-icon" data-action="download">
                                             <span class="material-symbols-rounded">download</span>
                                         </button>
                                     </td>
@@ -191,18 +317,18 @@
                                     <td><strong>295 000 FCFA</strong></td>
                                     <td><span class="status-badge paid">Payé</span></td>
                                     <td>
-                                        <button class="btn-icon">
+                                        <button class="btn-icon" data-action="download">
                                             <span class="material-symbols-rounded">download</span>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr data-status="paid">
                                     <td>Loyer — Mai 2026</td>
-                                    <td>01 mai 2026 · Wave</td>
+                                    <td>01 mai 2026 · MTN Mobile Money</td>
                                     <td><strong>295 000 FCFA</strong></td>
                                     <td><span class="status-badge paid">Payé</span></td>
                                     <td>
-                                        <button class="btn-icon">
+                                        <button class="btn-icon" data-action="download">
                                             <span class="material-symbols-rounded">download</span>
                                         </button>
                                     </td>
@@ -215,6 +341,45 @@
         </main>
     </div>
 
+   <script>
+    // Configuration des liens de redirection vers les guichets de paiement
+    const LIENS_PAIEMENT = {
+        'Wave': 'https://pay.wave.com/',
+        'MTN Mobile Money': 'https://checkout.mtn.ci/',
+        'Orange Money': 'https://om.orange.ci/'
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const providerCards = document.querySelectorAll('.provider-card');
+        const payButtons = document.querySelectorAll('[data-action="pay"]');
+
+        providerCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const radio = card.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+
+                // Mise à jour de l'état visuel actif
+                providerCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+
+                const selectedProvider = radio.value;
+
+                // Synchronisation du moyen de paiement sur les boutons d'action
+                payButtons.forEach(btn => {
+                    btn.dataset.provider = selectedProvider;
+                });
+            });
+        });
+    });
+</script>
+    <script src="auth.js"></script>
+    <script src="page-protegee.js"></script>
+    <script src="modal.js"></script>
+    <script src="validation-formulaire.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="recherche-globale.js"></script>
+    <script src="interactions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

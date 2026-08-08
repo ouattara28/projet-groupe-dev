@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
@@ -37,6 +36,11 @@
             </header>
 
             <div class="sidebar-content">
+                <button class="theme-toggle theme-toggle-row" type="button">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                    <span class="menu-label">Mode sombre</span>
+                </button>
+
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -95,11 +99,11 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Bonjour 👋, Ismaël</h1>
-                    <p class="subtitle">Résidence Les Palmiers · Apt. B14</p>
+                    <h1 class="page-title">Bonjour 👋, <span id="user-nom">…</span></h1>
+                    <p class="subtitle" id="user-residence">Chargement…</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">IO</div>
+                    <div class="user-avatar">--</div>
                 </div>
             </header>
 
@@ -111,7 +115,7 @@
                     </div>
                     <div class="stat-details">
                         <span class="stat-title">Prochaine Échéance</span>
-                        <span class="stat-value">10 août 2026</span>
+                        <span class="stat-value" id="stat-echeance">…</span>
                     </div>
                 </div>
 
@@ -121,7 +125,7 @@
                     </div>
                     <div class="stat-details">
                         <span class="stat-title">Montant du Loyer</span>
-                        <span class="stat-value">295 000 FCFA</span>
+                        <span class="stat-value" id="stat-loyer">…</span>
                     </div>
                 </div>
 
@@ -131,7 +135,7 @@
                     </div>
                     <div class="stat-details">
                         <span class="stat-title">Statut du Compte</span>
-                        <span class="stat-value text-success">À jour (Juillet)</span>
+                        <span class="stat-value" id="stat-statut">…</span>
                     </div>
                 </div>
             </section>
@@ -139,11 +143,11 @@
             <!-- Main Interactive Section -->
             <section class="dashboard-grid">
                 <!-- Payment Banner -->
-                <div class="card payment-hero-card">
+                <div class="card payment-hero-card" id="hero-banniere">
                     <div class="hero-content">
                         <span class="badge-due">Loyer en attente</span>
-                        <h2>Montant dû : 295 000 FCFA</h2>
-                        <p>Échéance le 10 août 2026</p>
+                        <h2>Montant dû : <span id="hero-montant-du">…</span></h2>
+                        <p>Échéance le <span id="hero-echeance">…</span></p>
                         <button class="btn-primary">
                             <span class="material-symbols-rounded">credit_card</span>
                             Payer maintenant
@@ -193,24 +197,9 @@
                                     <th>Statut</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="activite-recente-body">
                                 <tr>
-                                    <td>Loyer — Juillet 2026</td>
-                                    <td>02 juil. 2026</td>
-                                    <td><strong>295 000 FCFA</strong></td>
-                                    <td><span class="status-badge paid">Payé</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Loyer — Juin 2026</td>
-                                    <td>03 juin 2026</td>
-                                    <td><strong>295 000 FCFA</strong></td>
-                                    <td><span class="status-badge paid">Payé</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Réparation robinet</td>
-                                    <td>28 mai 2026</td>
-                                    <td><strong>-</strong></td>
-                                    <td><span class="status-badge pending">En cours</span></td>
+                                    <td colspan="4">Chargement…</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -242,7 +231,9 @@
                                     <span class="doc-sub">295 000 FCFA · PDF</span>
                                 </div>
                             </div>
-                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                            <a class="btn-icon" href="documents/recu-juillet-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
                         </li>
                         <li class="doc-item">
                             <div class="doc-info">
@@ -252,7 +243,9 @@
                                     <span class="doc-sub">Valide jusqu'au 30/06/2027</span>
                                 </div>
                             </div>
-                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                            <a class="btn-icon" href="documents/attestation-residence.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -260,6 +253,16 @@
         </main>
     </div>
 
+    <!-- Ordre important : mock-api → auth → dashboard → script (UI générique) -->
+    <script src="mock-api.js"></script>
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="modal.js"></script>
+    <script src="validation-formulaire.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="recherche-globale.js"></script>
+    <script src="interactions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

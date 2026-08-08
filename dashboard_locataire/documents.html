@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
@@ -37,6 +36,11 @@
             </header>
 
             <div class="sidebar-content">
+                <button class="theme-toggle theme-toggle-row" type="button">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                    <span class="menu-label">Mode sombre</span>
+                </button>
+
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -95,163 +99,128 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Mes Documents</h1>
-                    <p class="subtitle">Consultez et téléchargez vos quittances, contrats et attestation</p>
+                    <h1 class="page-title">Documents</h1>
+                    <p class="subtitle">Votre bail, reçus et attestations, toujours accessibles</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">IO</div>
+                    <div class="user-avatar">--</div>
                 </div>
             </header>
 
-            <!-- Filtres des documents -->
+            <!-- Filtres -->
             <div class="filter-row">
                 <button class="filter-chip active" data-filter="all">Tous</button>
-                <button class="filter-chip" data-filter="receipt">Quittances</button>
-                <button class="filter-chip" data-filter="contract">Contrats & Attestations</button>
+                <button class="filter-chip" data-filter="bail">Bail</button>
+                <button class="filter-chip" data-filter="recu">Reçus</button>
+                <button class="filter-chip" data-filter="attestation">Attestations</button>
             </div>
 
-            <!-- Section Quittances de Loyer -->
-            <div class="document-section" data-section-type="receipt">
-                <h2 class="section-header-title">Quittances de loyer</h2>
-                <div class="card table-card mb-large">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Document</th>
-                                    <th>Période</th>
-                                    <th>Date d'émission</th>
-                                    <th>Taille</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-category="receipt">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">receipt_long</span>
-                                            <strong>Quittance_Loyer_Juillet_2026.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Juillet 2026</td>
-                                    <td>02 juil. 2026</td>
-                                    <td>245 KB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr data-category="receipt">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">receipt_long</span>
-                                            <strong>Quittance_Loyer_Juin_2026.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Juin 2026</td>
-                                    <td>03 juin 2026</td>
-                                    <td>240 KB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr data-category="receipt">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">receipt_long</span>
-                                            <strong>Quittance_Loyer_Mai_2026.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Mai 2026</td>
-                                    <td>01 mai 2026</td>
-                                    <td>238 KB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <!-- Section Bail -->
+            <div class="document-section" data-section-type="bail">
+                <h2 class="section-header-title">Contrat de bail</h2>
+                <div class="card mb-large">
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">description</span>
+                                <div>
+                                    <span class="doc-title">Bail de résidence 2026</span>
+                                    <span class="doc-sub">Signé le 15 janvier 2026 · PDF (1.2 Mo)</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">description</span>
+                                <div>
+                                    <span class="doc-title">Avenant — Révision de loyer 2026</span>
+                                    <span class="doc-sub">Signé le 02 janvier 2026 · PDF (340 Ko)</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Section Contrats & Administratif -->
-            <div class="document-section" data-section-type="contract">
-                <h2 class="section-header-title">Contrats & Administratif</h2>
-                <div class="card table-card">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Document</th>
-                                    <th>Type</th>
-                                    <th>Date d'ajout</th>
-                                    <th>Taille</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-category="contract">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">article</span>
-                                            <strong>Contrat_Bail_Residence.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Contrat de bail</td>
-                                    <td>15 janv. 2026</td>
-                                    <td>1.2 MB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr data-category="contract">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">verified</span>
-                                            <strong>Attestation_Residence_2026.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Attestation</td>
-                                    <td>10 févr. 2026</td>
-                                    <td>512 KB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr data-category="contract">
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">gavel</span>
-                                            <strong>Reglement_Interieur.pdf</strong>
-                                        </div>
-                                    </td>
-                                    <td>Règlement</td>
-                                    <td>15 janv. 2026</td>
-                                    <td>890 KB</td>
-                                    <td>
-                                        <button class="btn-icon">
-                                            <span class="material-symbols-rounded">download</span>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <!-- Section Reçus -->
+            <div class="document-section" data-section-type="recu">
+                <h2 class="section-header-title">Reçus de paiement</h2>
+                <div class="card mb-large">
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Juillet 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · Wave · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/recu-juillet-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Juin 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · Orange Money · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/recu-juin-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Mai 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · Wave · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/recu-mai-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section Attestations -->
+            <div class="document-section" data-section-type="attestation">
+                <h2 class="section-header-title">Attestations</h2>
+                <div class="card">
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">verified</span>
+                                <div>
+                                    <span class="doc-title">Attestation de résidence</span>
+                                    <span class="doc-sub">Valide jusqu'au 30/06/2027 · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/attestation-residence.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </main>
     </div>
 
+    <script src="mock-api.js"></script>
+    <script src="auth.js"></script>
+    <script src="page-protegee.js"></script>
+    <script src="modal.js"></script>
+    <script src="validation-formulaire.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="recherche-globale.js"></script>
+    <script src="interactions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

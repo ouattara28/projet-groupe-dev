@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Espace Client</title>
-    <!-- Google Material Symbols (Icônes) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +12,6 @@
     <div class="auth-container">
         <div class="auth-card">
             
-            <!-- En-tête de la carte -->
             <div class="auth-header">
                 <div class="auth-logo">
                     <span class="material-symbols-rounded">lock</span>
@@ -23,10 +20,8 @@
                 <p class="auth-subtitle">Veuillez saisir vos identifiants pour accéder à votre espace</p>
             </div>
 
-            <!-- Formulaire de connexion -->
             <form class="auth-form" id="loginForm" autocomplete="on">
                 
-                <!-- Champ Adresse Email -->
                 <div class="form-group">
                     <label for="email" class="form-label">Adresse e-mail</label>
                     <div class="input-wrapper">
@@ -36,14 +31,13 @@
                             id="email" 
                             name="email" 
                             class="form-input" 
-                            placeholder="nom@exemple.com" 
+                            placeholder="votre.email@domaine.com" 
                             required 
                             autocomplete="email"
                         >
                     </div>
                 </div>
 
-                <!-- Champ Mot de passe -->
                 <div class="form-group">
                     <label for="password" class="form-label">Mot de passe</label>
                     <div class="input-wrapper">
@@ -63,16 +57,14 @@
                     </div>
                 </div>
 
-                <!-- Options : Se souvenir de moi & Mot de passe oublié -->
                 <div class="form-options">
                     <label class="remember-me">
                         <input type="checkbox" id="rememberMe" name="rememberMe">
                         <span>Se souvenir de moi</span>
                     </label>
-                    <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                    <a href="mot-de-passe-oublie.html" class="forgot-link">Mot de passe oublié ?</a>
                 </div>
 
-                <!-- Bouton de soumission -->
                 <button type="submit" class="btn-primary btn-submit" id="submitBtn">
                     <span>Se connecter</span>
                     <span class="material-symbols-rounded">arrow_forward</span>
@@ -80,15 +72,15 @@
 
             </form>
 
-            <!-- Pied de page / Inscription -->
             <div class="auth-footer">
-                Vous n'avez pas encore de compte ? <a href="#">Créer un compte</a>
+                Vous n'avez pas encore de compte ? <a href="inscription.html">Créer un compte</a>
             </div>
 
         </div>
     </div>
 
-    <!-- Le fichier JS qui sera géré par Ismael pour le fonctionnement du formulaire s -->
+    <script src="dark-mode.js"></script>
+    <script src="validation-formulaire.js"></script>
     <script src="login.js"></script>
 </body>
 </html>
